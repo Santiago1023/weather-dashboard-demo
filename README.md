@@ -28,7 +28,7 @@ This is a project that extract data from an API call, and store it in AWS S3 buc
 	IAM user is an identity that represents a person that interacts with aws services and resources.
 	IAM group is a collection of IAM users. You can associate a policy to a group, and all users within are granted permissions specified by the policy.
 	- First, type IAM in the searchbar:
-![iam-searchbar](/imagenes/iam-searchbar.png)
+![iam-serachbar](/imagenes/iam-serachbar.png)
 	- Select user groups and click in create group button
 ![create-group1.png](/imagenes/create-group1.png)
 	- Type the user group name, search AmazonS3FullAccess, and click in create user group
@@ -63,7 +63,9 @@ This is a project that extract data from an API call, and store it in AWS S3 buc
 	`cd src`
 	`python weather_dashboard.py`
 9. Review the console
+
 ![console.png](/imagenes/console.png)
+
 10. Review the s3 service
 ![s3-bucket.png](/imagenes/s3-bucket.png)
 11. That's all, study these topics, try it and share with others.
