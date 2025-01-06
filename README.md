@@ -72,6 +72,8 @@ This is a project that extract data from an API call, and store it in AWS S3 buc
 
 #### With love and grateful to people who creates these projects:
 [Day 1 explanation](https://www.youtube.com/watch?v=A95XBJFOqjw "Day 1")
+
 [Original code](https://github.com/ShaeInTheCloud/30days-weather-dashboard/tree/main "original code")
+
 [DevOps Challenges info](https://www.linkedin.com/posts/deshae-lyda_30-day-devops-challenge-day-1-devopsallstarschallenge-activity-7282060035038359552-yUpd?utm_source=share&utm_medium=member_desktop "DevOps Challenges info")
 
