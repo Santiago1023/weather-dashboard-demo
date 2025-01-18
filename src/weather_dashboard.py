@@ -28,13 +28,14 @@ class WeatherDashboard:
         except Exception as e:
             print(f"Error creating bucket: {e}")
 
-    def fetch_weather(self, city):
+    def fetch_weather(self, city, units):
         """Fetch weather data from OpenWeather API"""
         base_url = "http://api.openweathermap.org/data/2.5/weather"
         params = {
             "q": city,
             "appid": self.api_key,
-            "units": "imperial"
+            # "units": "imperial"
+            "units": units
         }
         
         try:
@@ -67,34 +68,34 @@ class WeatherDashboard:
             print(f"Error saving to S3: {e}")
             return False
 
-def main():
-    dashboard = WeatherDashboard()
+# def main():
+#     dashboard = WeatherDashboard()
     
-    # Create bucket if needed
-    dashboard.create_bucket_if_not_exists()
+#     # Create bucket if needed
+#     dashboard.create_bucket_if_not_exists()
     
-    cities = ["Philadelphia", "Seattle", "New York"]
+#     cities = ["Philadelphia", "Seattle", "New York"]
     
-    for city in cities:
-        print(f"\nFetching weather for {city}...")
-        weather_data = dashboard.fetch_weather(city)
-        if weather_data:
-            temp = weather_data['main']['temp']
-            feels_like = weather_data['main']['feels_like']
-            humidity = weather_data['main']['humidity']
-            description = weather_data['weather'][0]['description']
+#     for city in cities:
+#         print(f"\nFetching weather for {city}...")
+#         weather_data = dashboard.fetch_weather(city, "imperial")
+#         if weather_data:
+#             temp = weather_data['main']['temp']
+#             feels_like = weather_data['main']['feels_like']
+#             humidity = weather_data['main']['humidity']
+#             description = weather_data['weather'][0]['description']
             
-            print(f"Temperature: {temp}°F")
-            print(f"Feels like: {feels_like}°F")
-            print(f"Humidity: {humidity}%")
-            print(f"Conditions: {description}")
+#             print(f"Temperature: {temp}°F")
+#             print(f"Feels like: {feels_like}°F")
+#             print(f"Humidity: {humidity}%")
+#             print(f"Conditions: {description}")
             
-            # Save to S3
-            success = dashboard.save_to_s3(weather_data, city)
-            if success:
-                print(f"Weather data for {city} saved to S3!")
-        else:
-            print(f"Failed to fetch weather data for {city}")
+#             # Save to S3
+#             success = dashboard.save_to_s3(weather_data, city)
+#             if success:
+#                 print(f"Weather data for {city} saved to S3!")
+#         else:
+#             print(f"Failed to fetch weather data for {city}")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

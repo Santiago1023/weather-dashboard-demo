@@ -77,3 +77,13 @@ This is a project that extract data from an API call, and store it in AWS S3 buc
 
 [DevOps Challenges info](https://www.linkedin.com/posts/deshae-lyda_30-day-devops-challenge-day-1-devopsallstarschallenge-activity-7282060035038359552-yUpd?utm_source=share&utm_medium=member_desktop "DevOps Challenges info")
 
+
+
+creamos un entorno virtual con python -m venv .venv
+run .venv\Scripts\activate
+run pip install -r requirements.txt
+cd src
+uvicorn main:app --reload
+
+
+deactivate 
