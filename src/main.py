@@ -24,7 +24,7 @@ async def get_current_weather_by_city_name(city_name: CityName, units: UnitsOpti
     dashboard_object = WeatherDashboard()
     dashboard_object.create_bucket_if_not_exists()
     weather_data = dashboard_object.fetch_weather(city_name, units)
-    
+
     if weather_data:
         temp = weather_data['main']['temp']
         feels_like = weather_data['main']['feels_like']
@@ -42,4 +42,4 @@ async def get_current_weather_by_city_name(city_name: CityName, units: UnitsOpti
         print(f"Failed to fetch weather data for {city_name}")
 
     print(weather_data)
-    return {'city_name': city_name}
+    return weather_data
