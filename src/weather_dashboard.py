@@ -45,14 +45,34 @@ class WeatherDashboard:
         except requests.exceptions.RequestException as e:
             print(f"Error fetching weather data: {e}")
             return None
-
-    def save_to_s3(self, weather_data, city):
+        
+    def fetch_weather_forecast(self, city, units):
+        """Fetch weather data forecast from OpenWeather API"""
+        base_url = "http://api.openweathermap.org/data/2.5/forecast"
+        params = {
+            "q": city,
+            "appid": self.api_key,
+            # "units": "imperial"
+            "units": units
+        }
+        
+        try:
+            response = requests.get(base_url, params=params)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching weather data: {e}")
+            return None
+        
+    def save_to_s3(self, weather_data, city, forecast):
         """Save weather data to S3 bucket"""
         if not weather_data:
             return False
-            
         timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
-        file_name = f"weather-data/{city}-{timestamp}.json"
+        if forecast:
+            file_name = f"weather-forecast-data/{city}-{timestamp}.json"
+        else:
+            file_name = f"weather-data/{city}-{timestamp}.json"
         
         try:
             weather_data['timestamp'] = timestamp
