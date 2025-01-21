@@ -22,7 +22,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Libraries
 https://react-icons.github.io/react-icons/
+
 https://recharts.org/en-US
+
 https://www.npmjs.com/package/react-toastify
+
 https://axios-http.com/es/docs/intro
 
