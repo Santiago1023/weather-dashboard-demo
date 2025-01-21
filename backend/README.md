@@ -1,3 +1,4 @@
+## Getting Started
 We create a virtual environment with:
 - python -m venv .venv
   
@@ -9,3 +10,8 @@ run:
 
 cd src:
 - uvicorn main:app --reload
+
+## Libraries
+https://openweathermap.org/current
+
+https://openweathermap.org/forecast5
