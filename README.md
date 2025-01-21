@@ -1,7 +1,8 @@
 ## DevOps Challenge: Day 1 (Weather Dashboard)
 
 ### Project Overview
-This is a project that allows you to interact with a web interface, extract data from an API call, and store it in AWS S3 bucket.
+This is a project based on a serie of devops challenges, the explanation was how to use python to interact with AWS and I complement the code with the creation of FastAPI backend and a NextJS Frontend.
+The project allows you to interact with a web interface, extract data from an API call, visualize the information and store it in AWS S3 bucket.
 
 **Tools:**
 - External API (OpenWeather API)
