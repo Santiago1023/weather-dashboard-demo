@@ -1,7 +1,7 @@
 ## DevOps Challenge: Day 1 (Weather Dashboard)
 
 ### Project Overview
-This is a project that allow you interact with an interface web, extract data from an API call, and store it in AWS S3 bucket.
+This is a project that allows you to interact with a web interface, extract data from an API call, and store it in AWS S3 bucket.
 
 **Tools:**
 - External API (OpenWeather API)
@@ -10,35 +10,35 @@ This is a project that allow you interact with an interface web, extract data fr
 - NextJS
 
 **Architecture**
-This is an application to view the current and forecast weather, its backend is deployed in Render, and its frontend is deployed in Vercel, and store metadata in AWS S3.
+This is an application to view the current and forecast weather. Its backend is deployed on Render, and its frontend is deployed on Vercel, and metadata is store in AWS S3.
 ![architecture.png](/imagenes/architecture.png)
 
 ### Project Structure
-weather-dashboard-demo/ -> main directory
-|---backend/ -> fastapi app
-|------src/
-|---------_init_.py
-|---------main.py -> contain the routes and the app creation
-|---------weather_dashboard.py -> fetch the data
-|---------requirements.txt -> packages required
-|---------README.md -> steps to run the backend
-
-|---frontend/ -> nextjs app
-|------app/
-|---------layout.tsx -> layout to all pages
-|---------page.tsx -> homepage
-|---------global.css
-|---------components/
-|------------SideBar.tsx -> render a sidebar
-|---------current-weather/
-|------------page.tsx -> render the information of current weather
-|---------weather-forecast/
-|------------page.tsx -> render the information of forecast weather
-|------README.md -> steps to run the frontend
-
-|---CHALLENGE-README.md -> tutor explanation
-|---MANUAL.AWS-README.md ->steps to setup manually the AWS configuration
-|---README.md -> overview of the project
+```
+weather-dashboard-demo/ # Main directory
+├── backend/ # FastAPI app
+│ ├── src/ # Source files
+│ │ ├── init.py # App initialization
+│ │ ├── main.py # Contains routes and app creation
+│ │ ├── weather_dashboard.py # Fetch weather data
+│ ├── requirements.txt # Dependencies
+│ └── README.md # Steps to run the backend 
+├── frontend/ # Next.js app
+│ ├── app/ # App core
+│ │ ├── layout.tsx # Layout for all pages
+│ │ ├── page.tsx # Homepage
+│ │ ├── global.css # Global styles
+│ │ ├── components/ # Reusable components
+│ │ │ └── SideBar.tsx # Sidebar component
+│ │ ├── current-weather/ # Current weather section
+│ │ │ └── page.tsx # Render current weather information
+│ │ ├── weather-forecast/ # Weather forecast section
+│ │ │ └── page.tsx # Render forecast weather information
+│ └── README.md # Steps to run the frontend
+├── CHALLENGE-README.md # Tutor explanation
+├── MANUAL.AWS-README.md # Steps to manually set up AWS configuration
+└── README.md # Overview of the project
+```
 
 
 ### What I Learned
@@ -49,6 +49,7 @@ weather-dashboard-demo/ -> main directory
 
 ### Links
 [Frontend - Vercel](https://weather-dashboard-demo-phi.vercel.app/ "Frontend - Vercel")
+
 [Backend - Render](https://weather-dashboard-demo.onrender.com "Backend - Render")
 
 
