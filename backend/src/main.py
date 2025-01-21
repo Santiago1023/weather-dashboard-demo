@@ -3,13 +3,10 @@ from fastapi import FastAPI
 from weather_dashboard import WeatherDashboard
 from fastapi.middleware.cors import CORSMiddleware
 
-
-
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=["http://localhost:3000"],  # Or ["*"] for all origins
-    allow_origins=["*"],  # Or ["*"] for all origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -42,7 +39,6 @@ async def get_current_weather_by_city_name(city_name: str, units: UnitsOption):
     else:
         print(f"Failed to fetch weather data for {city_name}")
         return None
-    print(data)
     return data
 
 @app.get("/forecast-weather/")
@@ -60,35 +56,4 @@ async def get_forecast_weather(city_name: str, units: UnitsOption):
                 'datetime':  item['dt_txt']
             }
             data.append(data_item)
-    print(data)
-    # print(weather_forecast_data)
-    # return weather_forecast_data
     return data
-
-# @app.get("/forecast-weather/")
-# async def get_forecast_weather_by_city_name(request: WeatherRequest):
-# # async def get_forecast_weather_by_city_name(city_name: CityName, units: UnitsOption):
-#     city_name = request.city_name.name
-#     units = request.units.name
-
-#     # dashboard_object.create_bucket_if_not_exists()
-#     weather_forecast_data = dashboard_object.fetch_weather_forecast(city_name, units)
-
-#     # if weather_forecast_data:
-#     #     temp = weather_forecast_data['main']['temp']
-#     #     feels_like = weather_forecast_data['main']['feels_like']
-#     #     humidity = weather_forecast_data['main']['humidity']
-#     #     description = weather_forecast_data['weather'][0]['description']
-        
-#     #     print(f"Temperature: {temp}°F")
-#     #     print(f"Feels like: {feels_like}°F")
-#     #     print(f"Humidity: {humidity}%")
-#     #     print(f"Conditions: {description}")
-#     #     success = dashboard_object.save_to_s3(weather_forecast_data, city_name, True)
-#     #     if success:
-#     #         print(f"Weather data for {city_name} saved to S3!")
-#     # else:
-#     #     print(f"Failed to fetch weather data for {city_name}")
-
-#     print(weather_forecast_data)
-#     return weather_forecast_data
